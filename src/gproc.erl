@@ -1370,7 +1370,7 @@ lookup_pids({T,_,_} = Key) ->
     [P || P <- L, my_is_process_alive(P)].
 
 
-%% @spec (pid()) -> boolean()
+%% @spec (pid()) -> bool()
 %%
 my_is_process_alive(P) when node(P) =:= node() ->
     is_process_alive(P);
