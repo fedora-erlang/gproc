@@ -41,6 +41,15 @@ dist_test_() ->
        [
         fun(Ns) ->
                 [{inorder, basic_tests(Ns)}]
+        end,
+        fun(Ns) ->
+                tests(Ns, [?f(t_sync_cand_dies(Ns))])
+        end,
+        fun(Ns) ->
+                tests(Ns, [?f(t_fail_node(Ns))])
+        end,
+        fun(Ns) ->
+                tests(Ns, [?f(t_master_dies(Ns))])
         end
        ]}
      ]}.
